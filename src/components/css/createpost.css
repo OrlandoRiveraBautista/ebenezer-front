@@ -1,0 +1,28 @@
+:root {
+    --main-color: rgba(0,	230,	118, .2);
+    --black-color: #303030;
+}
+
+.btn-primary {
+    background-color: var(--main-color) !important;
+    border-color: var(--main-color) !important;
+    color: var(--black-color) !important;
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+
+    -webkit-box-shadow: 0px 12px 34px -7px var(--main-color);
+    -moz-box-shadow: 0px 12px 34px -7px var(--main-color);
+    box-shadow: 0px 12px 34px -7px var(--main-color);
+
+    
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-primary img {
+    height: 20px;
+    margin-right: 8px;
+    margin-bottom: 5px;
+}

@@ -1,0 +1,63 @@
+.bible-nav {
+    position: relative;
+    height: 38px;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+.current-chapter {
+    width: fit-content;
+    display: inline-block;
+}
+.current-chapter h1 {
+    margin: 0 !important;
+}
+.search-container {
+    position: relative;
+    background-color: rgb(241, 241, 241);
+    height: 38px;
+    width: 38px;
+    float: right;
+    border-radius: 20px;
+    transition: all 200ms ease-in-out;
+}
+
+.search-bar {
+   height: 38px; 
+}
+.search-bar button {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    border: none;
+    outline: none !important;
+    border-radius: 100%;
+    background: none;
+    padding: 6px;
+    right: 0px;
+}
+.search-bar img {
+    position: relative;
+    width: 22px;
+    margin: 2px;
+}
+
+.search-bar input {
+    outline: none !important;
+    border: none;
+    padding: 8px;
+    margin-left: 6px;
+    margin-right: 6px;
+    height: 38px;
+    background: none;
+    width: 70%;
+    display: none;
+    color: var(--black-color);
+}
+
+.bible-content {
+    margin-top: 20px;
+}
+
+.bible-content li {
+    list-style: none;
+}

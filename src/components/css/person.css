@@ -1,0 +1,39 @@
+/* Container */
+.person-container {
+    position: relative;
+    height: 275px;
+    width: 200px;
+    text-align: center;
+    padding-top: 15px;
+    margin-right: 50px;
+}
+
+/* Name */
+.person-container h3 {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+
+.person-picture-container {
+    position: relative;
+    height: 175px;
+    width: 175px;
+    background-color: lightgray;
+    border: none;
+    outline: none;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 100%;
+    -webkit-box-shadow: 0px 3px 8px 1px rgba(0,0,0,0.4);
+-moz-box-shadow: 0px 3px 8px 1px rgba(0,0,0,0.4);
+box-shadow: 0px 3px 8px 1px rgba(0,0,0,0.4);
+}
+.person-picture-container img {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 100%;
+}

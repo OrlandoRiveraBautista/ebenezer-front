@@ -1,0 +1,156 @@
+.identification {
+    margin-bottom: 20px;
+}
+.userID {
+    width: 100%;
+    height: 60px;
+}
+.userImg-container {
+    position: relative;
+    height: 100%;
+    width: 60px;
+    margin-right: 12px;
+    float: left;
+    border-radius: 100%;
+    background-color: gainsboro;
+    overflow: hidden;
+}
+.userImg-container img {
+    position: relative;
+    height: inherit;
+    right: 25%;
+}
+.userID h2 {
+    position: relative;
+    top: 11px;
+    margin-left: 72px;
+}
+
+.create-container {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    box-shadow: 0px 10px 24px 5px gainsboro;
+    border-radius: 8px;
+    border-bottom: solid 3px var(--main-color);
+}
+
+.create {
+    margin-top: 20px;
+}
+
+.btn-outline-secondary {
+    margin-top: 40px;
+}
+
+.btn-outline-secondary img {
+    height: 30px;
+    margin-right: 8px;
+}
+
+/* Options Container */
+.options-container {
+    position: fixed;
+    width: 45px;
+    height: 160px;
+    border: none;
+    color: white;
+    bottom: 80px;
+    right: 15px;
+    padding: 10px;
+    transition: box-shadow 100ms ease-in-out;
+}
+/* Acc Actions button */
+.acc-actions {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    bottom: 0;
+    right: 0;
+    border-radius: 100%;
+    border: none;
+    /* color: var(--black-color); */
+    padding: 10px;
+    z-index: 20;
+    transition: box-shadow 100ms ease-in-out, transform 100ms ease-in-out ;
+    box-shadow: 0px 5px 15px 5px rgb(211, 211, 211);
+}
+.acc-actions:focus {
+    outline: none;
+}
+.acc-actions:active {
+    -webkit-box-shadow: 0px 0px 20px 2px #226dcf;
+    -moz-box-shadow:    0px 0px 20px 2px #226dcf;
+    box-shadow:         0px 0px 20px 2px #226dcf;
+}
+.acc-actions img {
+    margin-bottom: 2.5px;
+}
+.acc-actions.active {
+    transform: rotate(45deg);
+}
+
+/* Add new Acc button */
+.add-new-acc {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    bottom: 0px;
+    right: 2.5px;
+    border-radius: 100%;
+    border: none;
+    background-color: #476fe6;
+    color: white;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    /* opacity: 0; */
+    transition: box-shadow 100ms ease-in-out, bottom 100ms ease-in-out;
+}
+.add-new-acc img {
+    margin-bottom: 7.5px;
+}
+.add-new-acc:focus {
+    outline: none;
+}
+.add-new-acc:active {
+    -webkit-box-shadow: 0px 0px 20px 2px #226dcf;
+    -moz-box-shadow:    0px 0px 20px 2px #226dcf;
+    box-shadow:         0px 0px 20px 2px #226dcf;
+}
+.add-new-acc.active {
+    /* opacity: 1; */
+    bottom: 60px;
+}
+
+.log-out {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    bottom: 0px;
+    right: 2.5px;
+    border-radius: 100%;
+    border: none;
+    background-color: #e34659;
+    color: white;
+    padding: 10px;
+    /* opacity: 0; */
+    transition: box-shadow 100ms ease-in-out, bottom 100ms ease-in-out;
+}
+.log-out img {
+    position: relative;
+    left: 2px;
+    margin-bottom: 7.5px;
+}
+.log-out:focus {
+    outline: none;
+}
+.log-out:active {
+    -webkit-box-shadow: 0px 0px 20px 2px #226dcf;
+    -moz-box-shadow:    0px 0px 20px 2px #226dcf;
+    box-shadow:         0px 0px 20px 2px #FF5252;
+}
+.log-out.active {
+    /* opacity: 1; */
+    bottom: 115px;
+}
