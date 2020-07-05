@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios'
 import Cookies from 'js-cookies';
+import jwt_decode from 'jwt-decode';
 
 // CSS
 import './css/login.css'
@@ -34,16 +35,16 @@ class LogIn extends Component {
 
         // Saving the data
         // @FIX For some reason when using the production API the token cannot be read through the Cookies.get() function 
-        axios.post('http://localhost:5000/login',
+        axios.post('/login',
             this.state
             , {
                 onUploadProgress: progressEvent => {
                     console.log('Upload Progress: ' + (progressEvent.loaded / progressEvent.total * 100) + '%')
                 }
-            }).then((response) => {
+            }).then( async (response) => {
                 console.log(response.data.token)
                 if (response.statusText === 'OK') {
-                    Cookies.setItem('token', response.data.token)
+                    await Cookies.setItem('token', response.data.token)
                     const jwt =  Cookies.getItem('token');
                     console.log(jwt)
 

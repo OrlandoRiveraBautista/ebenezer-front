@@ -5,7 +5,8 @@ import Cookies from 'js-cookies';
 
 // Components
 import BookPicker from './bibleComponents/BookPicker';
-import ChapterPicker from './bibleComponents/ChapterPicker'
+import ChapterPicker from './bibleComponents/ChapterPicker';
+import VerseViewer from './bibleComponents/VerseViewer';
 
 // CSS
 import './css/bible.css';
@@ -20,7 +21,8 @@ class Bible extends Component {
         this.state = {
             currentPage: 'Biblia',
             currentChapter: null,
-            bookData: []
+            bookData: [],
+            verseData: []
         }
     }
 
@@ -74,7 +76,19 @@ class Bible extends Component {
         }
 
         if( prevState.currentChapter !== this.state.currentChapter ) {
-            console.log(this.state.currentChapter)
+            const verses = [];
+            axios.get(`https://api.scripture.api.bible/v1/bibles/592420522e16049f-01/chapters/${this.state.currentChapter}/verses`, { headers: { 'api-key': '7dbe0c4776c211bd9f6bdfe5b3f6694a' }}).then( response => {
+                // Getting the verses
+                const versedatas = response.data.data;
+                // Checking every single data entry
+                versedatas.forEach(( versedata ) => {
+                    verses.push(versedata)
+                })
+                this.setState({
+                    verseData: verses
+                })
+            })
+            
         } 
 
     }
@@ -110,6 +124,10 @@ class Bible extends Component {
 
                             <Route exact path='/bible/chapter'>
                                 <ChapterPicker bookData = {this.state.bookData} onChange={this.chapterEventHandler} />
+                            </Route>
+
+                            <Route exact path='/bible/chapter/verse'>
+                                <VerseViewer verseData = {this.state.verseData} />
                             </Route>
                         </Switch>
                     </div>
