@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route, NavLink, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, } from "react-router-dom";
 import axios from 'axios';
-import Cookies from 'js-cookies';
+// import Cookies from 'js-cookies';
 
 // Components
 import BookPicker from './bibleComponents/BookPicker';
@@ -21,8 +21,11 @@ class Bible extends Component {
         this.state = {
             currentPage: 'Biblia',
             currentChapter: null,
+            currentVerse: null,
             bookData: [],
-            verseData: []
+            verseData: [],
+
+            verseRedirect: false
         }
     }
 
@@ -55,6 +58,11 @@ class Bible extends Component {
             currentChapter: data
         })
     }
+    verseEventHandler = data => {
+        this.setState({
+            currentVerse: data
+        })
+    }
 
     // Getting the data when a chapter is picked
     componentDidUpdate(prevProps, prevState) {
@@ -75,21 +83,34 @@ class Bible extends Component {
             })
         }
 
-        if( prevState.currentChapter !== this.state.currentChapter ) {
+        // Getting the verse data when chapter is picked
+        if ( prevState.currentChapter !== this.state.currentChapter ) {
             const verses = [];
-            axios.get(`https://api.scripture.api.bible/v1/bibles/592420522e16049f-01/chapters/${this.state.currentChapter}/verses`, { headers: { 'api-key': '7dbe0c4776c211bd9f6bdfe5b3f6694a' }}).then( response => {
+            axios.get ( `https://api.scripture.api.bible/v1/bibles/592420522e16049f-01/chapters/${this.state.currentChapter}/verses`, { headers: { 'api-key': '7dbe0c4776c211bd9f6bdfe5b3f6694a' } } ).then ( response => {
                 // Getting the verses
                 const versedatas = response.data.data;
-                // Checking every single data entry
-                versedatas.forEach(( versedata ) => {
-                    verses.push(versedata)
+                this.setState ({
+                    currentVerse: versedatas[0]
                 })
-                this.setState({
-                    verseData: verses
-                })
-            })
-            
+            })  
         } 
+
+        // Getting the verse data
+        if ( prevState.currentVerse !== this.state.currentVerse ) {
+
+            const pickedVerse = this.state.currentVerse.id;
+
+            // axios.get(`https://api.scripture.api.bible/v1/bibles/592420522e16049f-01/verses/${pickedVerse}?content-type=text&include-notes=false&include-titles=true&include-chapter-numbers=false&include-verse-numbers=true&include-verse-spans=false&use-org-id=false`, { headers: { 'api-key': '7dbe0c4776c211bd9f6bdfe5b3f6694a' } } ).then( response => {
+
+                // getting the content 
+                this.setState({
+                    verseData: pickedVerse,
+                    verseRedirect: true
+                })
+                // console.log(response)
+            // })
+            // this.context.history.push('/bible/chapter/verse')
+        }
 
     }
 
@@ -97,6 +118,11 @@ class Bible extends Component {
     // Do the same when the user picks a chapter
 
     render() {
+
+        // if (this.state.verseRedirect) {
+        //     return <Redirect push to='/bible/chapter/verse' />
+        // }
+
         // What will be returned in render
         return (
             <Router>
@@ -108,8 +134,8 @@ class Bible extends Component {
                         </div>
                         <div className='search-container' id='search-container'>
                             <div className='search-bar'>
-                                <input onBlur={this.NoSearch} type='text' id='search-input'></input>
-                                <button onClick={this.Search}><img alt='search-img' src={searchImg}></img></button>
+                                <input onBlur = {this.NoSearch} type='text' id='search-input'></input>
+                                <button onClick = {this.Search}><img alt='search-img' src = {searchImg}></img></button>
                             </div>
                         </div>
                     </div>
@@ -119,16 +145,17 @@ class Bible extends Component {
                         <Switch>
 
                             <Route exact path='/bible'>
-                                <BookPicker onChange={this.bookEventHandler} />
+                                <BookPicker onChange = {this.bookEventHandler} />
                             </Route>
 
                             <Route exact path='/bible/chapter'>
-                                <ChapterPicker bookData = {this.state.bookData} onChange={this.chapterEventHandler} />
+                                <ChapterPicker bookData = {this.state.bookData} onChange = {this.chapterEventHandler} />
                             </Route>
 
                             <Route exact path='/bible/chapter/verse'>
-                                <VerseViewer verseData = {this.state.verseData} />
+                                <VerseViewer verseData = {this.state.verseData} verseCount = {this.state.bookData} onChange = {this.verseEventHandler} />
                             </Route>
+
                         </Switch>
                     </div>
                 </div>

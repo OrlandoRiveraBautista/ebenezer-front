@@ -17,7 +17,6 @@ import Account from './components/Account';
 import SignUp from './components/SignUp';
 import LogIn from './components/LogIn';
 import Bible from './components/Bible';
-import ChapterPicker from './components/bibleComponents/ChapterPicker';
 
 // Styles
 import './App.css';
