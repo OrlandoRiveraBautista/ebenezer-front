@@ -21,8 +21,7 @@ class Home extends Component {
 
         const postData = [];
         // Getting the posts from MongoDB
-        const proxyurl = "https://cors-anywhere.herokuapp.com/";
-        axios.get(proxyurl + 'https://ebenezer-final-server.now.sh/posts').then(response => {
+        axios.get('/posts').then(response => {
             // Getting the response data
             const posts = response.data;
             // Checking every single post
