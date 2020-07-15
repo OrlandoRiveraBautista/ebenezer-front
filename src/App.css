@@ -46,7 +46,8 @@ p {
 
 /* The Content div */
 .content {
-  height: calc(100vh - (50px + 55px));
+  min-height: calc(100% - (50px + 55px));
+  max-height: calc(100vh - (50px + 55px));
   overflow-y: auto;
 }
 .container {
