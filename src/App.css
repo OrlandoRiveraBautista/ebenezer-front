@@ -107,6 +107,7 @@ p {
 /* Navbar at the bottom */
 #nav-bar-bottom {
   position: relative;
+  bottom: 0;
   margin: 0;
   padding: 0;
   height: 55px;
