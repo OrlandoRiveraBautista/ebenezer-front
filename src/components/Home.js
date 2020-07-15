@@ -21,7 +21,7 @@ class Home extends Component {
 
         const postData = [];
         // Getting the posts from MongoDB
-        axios.get('/posts').then(response => {
+        axios.get('/api/posts').then(response => {
             // Getting the response data
             const posts = response.data;
             // Checking every single post
