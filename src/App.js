@@ -41,6 +41,11 @@ class App extends Component {
     }
   }
   
+  componentDidMount() {
+    console.log(window.innerHeight)
+    console.log(document.getElementById('content').style.height)
+  }
+  
   render( ) {
     
     // function to switch between the intro and the home
@@ -93,7 +98,7 @@ class App extends Component {
         </div>
 
         {/* Content that will change according to the route */}
-        <div className='content'>
+        <div className='content' id='content'>
           <Switch>
 
             {/* Home Route */}
