@@ -46,7 +46,6 @@ p {
 
 /* The Content div */
 .content {
-  position: fixed;
   height: calc(100% - (50px + 55px));
   overflow-y: auto;
 }
