@@ -109,8 +109,8 @@ p {
 
 /* Navbar at the bottom */
 #nav-bar-bottom {
-  position: fixed;
-  bottom: 0;
+  /* position: fixed;
+  bottom: 0; */
   margin: 0;
   padding: 0;
   height: 55px;
