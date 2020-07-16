@@ -19,7 +19,7 @@ class Contact extends Component {
     render() {
         // What will be returned in render
         return (
-            <div className='container-fluid contact'>
+            <div className='container-fluid contact' id='mainWrapper'>
                 <h1 className='main-text'>Ubicación</h1>
                 <div className='video-container' id='map-container'>
                     <iframe title='googleMaps'  id="gmap_canvas" src="https://maps.google.com/maps?q=1713%20Charles%20Rd%2C%20Houston%2C%20TX%2077093&t=&z=13&ie=UTF8&iwloc=&output=embed" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0"></iframe>

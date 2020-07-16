@@ -76,7 +76,7 @@ class CreateEvent extends Component {
 
                     {/* Main home route */}
 
-                        <div className='container-fluid'>
+                    <div className='container-fluid' id='mainWrapper'>
                             <h3><b>Nuevo Evento</b></h3>
                             <form onSubmit={this.storeNewEvent} method='POST'>
                                 <div className='control-group'>

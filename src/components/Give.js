@@ -91,7 +91,7 @@ class Give extends Component {
 
         // what will be returned in the render
         return (
-            <div className="container" >
+            <div className="container" id='mainWrapper'>
                 <h1>Ofrenda</h1>
                 <br></br>
 

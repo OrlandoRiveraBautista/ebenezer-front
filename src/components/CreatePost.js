@@ -90,7 +90,7 @@ class CreatePost extends Component {
 
                     {/* Main home route */}
 
-                        <div className='container-fluid'>
+                    <div className='container-fluid' id='mainWrapper'>
                         <h3><b>Nuevo Anuncio</b></h3>
                             <form onSubmit={this.storeNewPost} method='POST'>
                                 <div className='control-group'>

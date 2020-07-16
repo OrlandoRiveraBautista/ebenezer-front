@@ -92,7 +92,7 @@ class Account extends Component {
         return(
             <Router>
                 <Switch>
-                    <div>
+                    <div id='mainWrapper'>
                     <Route exact path='/account'>
                         <div className='container-fluid'>
                             <div className='identification'>

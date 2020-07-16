@@ -13,7 +13,7 @@ class Person extends Component {
         
 
         return(
-            <div className="person-container">
+            <div className="person-container" >
                 <div className="person-picture-container">
                     <img alt='Person Pic' src={this.props.picture}></img>
                 </div>

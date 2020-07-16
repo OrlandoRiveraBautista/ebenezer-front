@@ -64,7 +64,7 @@ class SignUp extends Component {
 
     render(){
         return(
-            <div className='container'>
+            <div className='container' id='mainWrapper'>
                 <h1>Registro</h1>
                 <form onSubmit={this.storeNewUser} method='POST' autoComplete="none">
                     <div className='control-group'>

@@ -19,9 +19,9 @@ class About extends Component {
         // What will be returned in render
         return (
             
-                <div >
-                            <AboutInfo/>
-                </div>
+            <div id='mainWrapper'>
+                <AboutInfo/>
+            </div>
         );
     }
 }

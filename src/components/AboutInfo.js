@@ -32,7 +32,7 @@ class AboutInfo extends Component {
         return (
 
             <Router>
-                <div className='container-fluid'>
+                <div className='container-fluid' >
 
                     <Switch>
 

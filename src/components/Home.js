@@ -65,7 +65,7 @@ class Home extends Component {
                     {/* Main home route */}
                     <Route exact path='/'>
 
-                    <div className='container-fluid'>
+                    <div className='container-fluid' id="mainWrapper">
                         <h1 className='main-text'>Bienvenidos</h1>
                         <div className="video-container">
                             {/* AN IFRAME WITH THE INTRO VIDEO FOR THE CHURCH WILL GO HERE */}

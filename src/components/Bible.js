@@ -126,7 +126,7 @@ class Bible extends Component {
         // What will be returned in render
         return (
             <Router>
-                <div className='container-fluid'>
+                <div className='container-fluid' id='mainWrapper'>
                     {/* Bible Navbar */}
                     <div className='bible-nav'>
                         <div className='current-chapter'>

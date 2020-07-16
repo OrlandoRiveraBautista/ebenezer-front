@@ -25,6 +25,10 @@ html, body {
   overflow: visible !important;
   padding: 0 !important;
 }
+#mainWrapper {
+  overflow-y: auto;
+  height: 100%;
+}
 
 /* ---------- MOBILE ----------- */
 /* Making fonts smaller for phones */
@@ -50,7 +54,7 @@ p {
 /* The Content div */
 .content {
   height: calc(100% - (50px + 55px));
-  overflow-y: auto;
+  overflow-y: hidden;
 }
 .container {
   margin: 0;

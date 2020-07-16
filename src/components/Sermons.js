@@ -72,7 +72,7 @@ class Sermons extends Component {
     render() {
         // What will be returned in render
         return (
-            <div className='container-fluid'>
+            <div className='container-fluid' id='mainWrapper'>
                 <h1 className='main-text'>Sermon Nuevo</h1>
                 <div className="video-container" id='current-video' >
 

@@ -68,7 +68,7 @@ class LogIn extends Component {
         }
 
         return (
-            <div className='login-container container'>
+            <div className='login-container container' id='mainWrapper'>
                 <h1>Iniciar sesión</h1>
                 <form onSubmit={this.loginUser} method='POST' autoComplete="none">
                     <div className='control-group'>

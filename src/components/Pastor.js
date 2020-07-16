@@ -21,7 +21,7 @@ class Pastor extends Component {
     render() {
         // What will be returned in render
         return (
-            <div className='container pastor-farias'>
+            <div className='container pastor-farias' id='mainWrapper'>
                 <h1>Francisco Arias</h1>
                 <div className='pastors-container'>
                     <img alt='Pastor' src={PastorArias}></img>
