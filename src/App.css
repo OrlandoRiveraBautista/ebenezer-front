@@ -46,8 +46,8 @@ p {
 
 /* The Content div */
 .content {
-  min-height: calc(100% - (50px + 55px));
-  max-height: calc(100vh - (50px + 55px));
+  position: fixed;
+  height: calc(100% - (50px + 55px));
   overflow-y: auto;
 }
 .container {
@@ -107,7 +107,7 @@ p {
 
 /* Navbar at the bottom */
 #nav-bar-bottom {
-  position: relative;
+  position: fixed;
   bottom: 0;
   margin: 0;
   padding: 0;
