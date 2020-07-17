@@ -10,9 +10,9 @@
 }
 
 html, body {
-  position: fixed;
+  /* position: fixed;
   height: 100%;
-  overflow: auto;
+  overflow: auto; */
   margin: 0;
   padding: 0;
   font-family: 'Nunito', sans-serif !important;
@@ -20,8 +20,8 @@ html, body {
   color: var(--black-color) !important;
 }
 .website-view {
-  position: fixed;
-  height: 100%;
+  /* position: fixed;
+  height: 100%; */
   overflow: visible !important;
   padding: 0 !important;
 }
@@ -54,6 +54,7 @@ p {
 /* The Content div */
 .content {
   position: fixed;
+  width: 100%;
   height: calc(100% - (50px + 55px));
   overflow-y: hidden;
 }
