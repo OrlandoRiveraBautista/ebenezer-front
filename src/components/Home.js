@@ -1,3 +1,6 @@
+// @FIX -- Change all the api calls to https://ebenezer-final-server.now.sh
+
+
 import React, {Component} from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import axios from 'axios';
@@ -21,7 +24,8 @@ class Home extends Component {
 
         const postData = [];
         // Getting the posts from MongoDB
-        axios.get('/posts').then(response => {
+        // @ FIX: I TRIED USING ENVOROMENT VARIABLES 
+        axios.get('https://ebenezer-final-server.now.sh/posts').then(response => {
             // Getting the response data
             const posts = response.data;
             // Checking every single post
