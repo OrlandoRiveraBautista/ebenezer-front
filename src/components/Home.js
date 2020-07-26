@@ -25,7 +25,7 @@ class Home extends Component {
         const postData = [];
         // Getting the posts from MongoDB
         // @ FIX: I TRIED USING ENVOROMENT VARIABLES 
-        axios.get('https://ebenezer-final-server.now.sh/posts').then(response => {
+        axios.get('https://cors-anywhere.herokuapp.com/https://ebenezer-final-server.now.sh/posts').then(response => {
             // Getting the response data
             const posts = response.data;
             // Checking every single post
