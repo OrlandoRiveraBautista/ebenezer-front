@@ -43,7 +43,7 @@ class SignUp extends Component {
         fileData.append('fullName', this.state.fullName);
 
         // Saving the data
-        axios.post('http://localhost:5000/signup',
+        axios.post('https://cors-anywhere.herokuapp.com/https://ebenezer-final-server.now.sh/signup',
             fileData
             , {
                 onUploadProgress: progressEvent => {

@@ -35,7 +35,7 @@ class LogIn extends Component {
 
         // Saving the data
         // @FIX For some reason when using the production API the token cannot be read through the Cookies.get() function 
-        axios.post('/login',
+        axios.post('https://cors-anywhere.herokuapp.com/https://ebenezer-final-server.now.sh/login',
             this.state
             , {
                 onUploadProgress: progressEvent => {

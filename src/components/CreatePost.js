@@ -52,7 +52,7 @@ class CreatePost extends Component {
         fileData.append('body', this.state.body);
         
         // Saving the data
-        axios.post('/posts/store', 
+        axios.post('https://cors-anywhere.herokuapp.com/https://ebenezer-final-server.now.sh/posts/store', 
             fileData
         , {
             withCredentials: true

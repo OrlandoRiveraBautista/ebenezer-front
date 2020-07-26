@@ -46,7 +46,7 @@ class Give extends Component {
     submitGive(event) {
         
         // Seding info to Server
-        axios.post('/give',
+        axios.post('https://cors-anywhere.herokuapp.com/https://ebenezer-final-server.now.sh/give',
             this.state
             , {
                 onUploadProgress: progressEvent => {

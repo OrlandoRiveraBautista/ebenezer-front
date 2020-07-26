@@ -32,7 +32,7 @@ class Sermons extends Component {
         
 
         // Geting current video
-        axios.get('/videos').then(response => {
+        axios.get('https://cors-anywhere.herokuapp.com/https://ebenezer-final-server.now.sh/videos').then(response => {
             // Saving the data
             const videoData = response.data;
             

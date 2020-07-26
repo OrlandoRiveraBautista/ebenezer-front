@@ -38,7 +38,7 @@ class CreateEvent extends Component {
     storeNewEvent(event) {
 
         // Saving the data
-        axios.post('/posts/store',
+        axios.post('https://cors-anywhere.herokuapp.com/https://ebenezer-final-server.now.sh/posts/store',
             this.state
             , {
                 withCredentials: true
