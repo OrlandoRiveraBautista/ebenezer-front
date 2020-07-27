@@ -197,6 +197,35 @@ p {
   display: none;
 }
 
+/* Banner to add to homescreen */
+.A2H {
+  position: absolute;
+  z-index: 10;
+  background-color: #fafefc;
+  width: 100%;
+  padding: 8px;
+  text-align: center;
+}
+.add-to-home-button {
+  display: block;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 8px;
+  outline: none;
+  border-radius: 8px;
+  background-color: var(--main-color) !important;
+  color: var(--black-color);
+  box-shadow: 0px 5px 10px 0px var(--main-color) !important;
+  border: none !important;
+}
+.close-banner {
+  display: block;
+  margin-left: auto;
+  border: none;
+  outline: none;
+}
+
 /* _? For Desktop ----------------------------------------------- */
                 /* Large Bound */
                 @media only screen and (min-width: 1200px) {

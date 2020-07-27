@@ -45,6 +45,37 @@ class App extends Component {
   componentDidMount() {
     console.log(window.innerHeight)
     console.log(document.getElementById('content').style.height)
+
+    // let installPromptEvent;
+
+    // const addBtn = document.querySelector('.add-to-home-button');
+    // addBtn.style.display = 'none';
+
+    // // Check if the app can be installed or if it meets the requirements
+    // window.addEventListener('beforeinstallprompt', (event) => {
+    //   event.preventDefault();
+    //   // store the event
+    //   installPromptEvent = event;
+
+    //   // Show the prompt
+    //   addBtn.style.display =  'block';
+
+    //   addBtn.addEventListener('click', (event) => {
+    //     addBtn.style.display = 'none';
+    //     installPromptEvent.prompt();
+
+    //     installPromptEvent.userChoice.then(( choiceResult ) => {
+    //       if ( choiceResult.outcome === 'accepted' ) {
+    //         console.log('user accepted')
+    //       } else {
+    //         console.log('user dismissed')
+    //       }
+    //       installPromptEvent = null
+    //     })
+    //   })
+
+      // document.querySelector('#install-button').disabled = false;
+    // })
   }
   
   render( ) {
@@ -62,12 +93,51 @@ class App extends Component {
     // function for the A2H 
     function AddToHome(props) {
       const show = props.show;
+      let installPromptEvent;
+
       if(show) {
-        return(
-          <div className="A2H">
-            <h1>Add App to Home</h1>
-          </div>
-        ) 
+
+        // const addBtn = document.querySelector('.add-to-home-button');
+        // addBtn.style.display = 'none';
+
+        // Check if the app can be installed or if it meets the requirements
+        window.addEventListener('beforeinstallprompt', (event) => {
+          event.preventDefault();
+          // store the event
+          installPromptEvent = event;
+
+          document.querySelector('#install-button').disabled = false;
+
+          console.log("this was called")
+
+          // Show the prompt
+          // addBtn.style.display = 'block';
+
+          // addBtn.addEventListener('click', (event) => {
+          //   console.log('button Clicled')
+          //   addBtn.style.display = 'none';
+          //   installPromptEvent.prompt();
+
+          //   installPromptEvent.userChoice.then((choiceResult) => {
+          //     if (choiceResult.outcome === 'accepted') {
+          //       console.log('user accepted')
+          //     } else {
+          //       console.log('user dismissed')
+          //     }
+          //     installPromptEvent = null
+          //   })
+          // })
+        })
+        return null
+
+        // return(
+        //   <div className="A2H">
+        //     <button className='close-banner'>X</button>
+        //     <h3>¿Quieres acceso más rapido?</h3>
+        //     <button className='add-to-home-button'>Agregame a tus aplicaciones</button>
+        //   </div>
+        // ) 
+
       } else {
         return null
       }
@@ -85,11 +155,14 @@ class App extends Component {
 
     // Asking to add the app to homescreen
     if ( this.state.firstTime === false ) {
-      setTimeout(( ) => {
-        this.setState({
-          A2H: false
-        })
-      }, 3200);
+
+      console.log(' button shown')
+
+      // setTimeout(( ) => {
+        // this.setState({
+        //   A2H: false
+        // })
+      // });
     }
 
     return (
