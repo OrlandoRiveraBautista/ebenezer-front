@@ -90,58 +90,58 @@ class App extends Component {
       }
     }
 
-    // function for the A2H 
-    function AddToHome(props) {
-      const show = props.show;
-      let installPromptEvent;
+    // // function for the A2H 
+    // function AddToHome(props) {
+    //   const show = props.show;
+    //   let installPromptEvent;
 
-      if(show) {
+    //   if(show) {
 
-        // const addBtn = document.querySelector('.add-to-home-button');
-        // addBtn.style.display = 'none';
+    //     // const addBtn = document.querySelector('.add-to-home-button');
+    //     // addBtn.style.display = 'none';
 
-        // Check if the app can be installed or if it meets the requirements
-        window.addEventListener('beforeinstallprompt', (event) => {
-          event.preventDefault();
-          // store the event
-          installPromptEvent = event;
+    //     // Check if the app can be installed or if it meets the requirements
+    //     window.addEventListener('beforeinstallprompt', (event) => {
+    //       event.preventDefault();
+    //       // store the event
+    //       installPromptEvent = event;
 
-          document.querySelector('#install-button').disabled = false;
+    //       document.querySelector('#install-button').disabled = false;
 
-          console.log("this was called")
+    //       console.log("this was called")
 
-          // Show the prompt
-          // addBtn.style.display = 'block';
+    //       // Show the prompt
+    //       // addBtn.style.display = 'block';
 
-          // addBtn.addEventListener('click', (event) => {
-          //   console.log('button Clicled')
-          //   addBtn.style.display = 'none';
-          //   installPromptEvent.prompt();
+    //       // addBtn.addEventListener('click', (event) => {
+    //       //   console.log('button Clicled')
+    //       //   addBtn.style.display = 'none';
+    //       //   installPromptEvent.prompt();
 
-          //   installPromptEvent.userChoice.then((choiceResult) => {
-          //     if (choiceResult.outcome === 'accepted') {
-          //       console.log('user accepted')
-          //     } else {
-          //       console.log('user dismissed')
-          //     }
-          //     installPromptEvent = null
-          //   })
-          // })
-        })
-        return null
+    //       //   installPromptEvent.userChoice.then((choiceResult) => {
+    //       //     if (choiceResult.outcome === 'accepted') {
+    //       //       console.log('user accepted')
+    //       //     } else {
+    //       //       console.log('user dismissed')
+    //       //     }
+    //       //     installPromptEvent = null
+    //       //   })
+    //       // })
+    //     })
+    //     return null
 
-        // return(
-        //   <div className="A2H">
-        //     <button className='close-banner'>X</button>
-        //     <h3>¿Quieres acceso más rapido?</h3>
-        //     <button className='add-to-home-button'>Agregame a tus aplicaciones</button>
-        //   </div>
-        // ) 
+    //     // return(
+    //     //   <div className="A2H">
+    //     //     <button className='close-banner'>X</button>
+    //     //     <h3>¿Quieres acceso más rapido?</h3>
+    //     //     <button className='add-to-home-button'>Agregame a tus aplicaciones</button>
+    //     //   </div>
+    //     // ) 
 
-      } else {
-        return null
-      }
-    }
+    //   } else {
+    //     return null
+    //   }
+    // }
 
     // to change the state of 'firstTime' from true to false
     if ( this.state.firstTime === true ) {
@@ -169,7 +169,7 @@ class App extends Component {
       // the container for the full website
       <div className="container-fluid website-view">
       <Greetings show = { this.state.firstTime } />
-      <AddToHome show = { this.state.A2H } />
+      {/* <AddToHome show = { this.state.A2H } /> */}
 
       {/* the navbar */}
       <Router>
