@@ -37,7 +37,8 @@ class App extends Component {
   constructor ( props ) {
     super ( props )
     this.state = {
-      firstTime: true // This will make the welcome only come when you first go to the site
+      firstTime: true, // This will make the welcome only come when you first go to the site
+      A2H: false
     }
   }
   
@@ -57,11 +58,36 @@ class App extends Component {
         return null
       }
     }
+
+    // function for the A2H 
+    function AddToHome(props) {
+      const show = props.show;
+      if(show) {
+        return(
+          <div className="A2H">
+            <h1>Add App to Home</h1>
+          </div>
+        ) 
+      } else {
+        return null
+      }
+    }
+
     // to change the state of 'firstTime' from true to false
     if ( this.state.firstTime === true ) {
       setTimeout( ( ) => {
         this.setState( {
-          firstTime: false
+          firstTime: false,
+          A2H: true
+        })
+      }, 3200);
+    }
+
+    // Asking to add the app to homescreen
+    if ( this.state.firstTime === false ) {
+      setTimeout(( ) => {
+        this.setState({
+          A2H: false
         })
       }, 3200);
     }
@@ -70,6 +96,7 @@ class App extends Component {
       // the container for the full website
       <div className="container-fluid website-view">
       <Greetings show = { this.state.firstTime } />
+      <AddToHome show = { this.state.A2H } />
 
       {/* the navbar */}
       <Router>

@@ -1,5 +1,5 @@
 {
-  "short_name": "Ebenezer App",
+  "short_name": "Ebenezer",
   "name": "Iglesia Missionera Ebenezer",
   "icons": [
     {
@@ -8,7 +8,7 @@
       "type": "image/x-icon"
     },
     {
-      "src": "EBZLogo.png",
+      "src": "EBZAppLogo.png",
       "type": "image/png",
       "sizes": "192x192"
     },
@@ -21,5 +21,5 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#fafefc"
 }
