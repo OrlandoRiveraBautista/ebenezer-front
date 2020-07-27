@@ -40,7 +40,7 @@ class ChapterPicker extends Component {
 
             let elements = bookChapters.map((element) => {
                 return (
-                    <div key={element.id} className='list-container numeric-list'>
+                    <div key={element.id} className='numeric-list'>
                         <ol>
                             <li className='grid'>
                                 <a href='/bible/chapter/verse' onClick={this.handleClick} name={element.id} className='grid-link'>
@@ -55,7 +55,9 @@ class ChapterPicker extends Component {
             return (
                 <div>
                     <h3>Capitulos</h3>
-                    {elements}
+                    <div className='chapters'>
+                        {elements}
+                    </div>
                 </div>
             )
 

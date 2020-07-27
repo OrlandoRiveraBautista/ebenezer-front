@@ -47,9 +47,9 @@ class BookPicker extends Component {
                     <div>
                         {/* Book Picker */}
                         <h3 style={{marginBottom: '20px'}}>Selecciona Libro</h3>
+                        {/* Antiguo Testamento */}
+                        <h4><b>Antiguo Testamento</b></h4>
                         <ul>
-                            {/* Antiguo Testamento */}
-                            <b><h4>Antiguo Testamento</h4></b>
                             <li className='book'>
                                 <a onClick={this.handleClick} name='GEN' >Génesis</a>
                             </li>
@@ -167,9 +167,11 @@ class BookPicker extends Component {
                             <li className='book'>
                                 <a onClick={this.handleClick} name='MAL' >Malaquías</a>
                             </li>
+                        </ul>
+                        {/* Nuevo Testamento */}
+                        <h4><b>Nuevo Testamento</b></h4>
 
-                            {/* Nuevo Testamento */}
-                            <b><h4 style={{marginTop: '20px'}}>Nuevo Testamento</h4></b>
+                        <ul>
                             <li className='book'>
                                 <a onClick={this.handleClick} name='MAT' >Mateo</a>
                             </li>

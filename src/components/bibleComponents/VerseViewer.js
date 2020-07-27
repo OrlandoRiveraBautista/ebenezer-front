@@ -70,7 +70,7 @@ class VerseViewer extends Component {
 
             let elements = versesData.map((element) => {
                 return (
-                    <div key={element.id} className='list-container numeric-list'>
+                    <div key={element.id} className='list-container'>
                         <span>{element.content}</span>
                     </div>
                 )
