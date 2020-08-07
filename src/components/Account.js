@@ -7,6 +7,7 @@ import jwt_decode from 'jwt-decode';
 // Importing components
 import CreatePost from './CreatePost';
 import CreateEvent from './CreateEvent';
+import UpdateYouTube from './UpdateYoutube';
 
 // Images
 import youtubeIMG from './graphics/icons/youtube.svg';
@@ -42,9 +43,9 @@ class Account extends Component {
 
     }
 
-    updateYouTube = () => {
+    updateYouTube = (data) => {
         this.setState({
-            redirect: true
+            redirect: data
         })
     }
 
@@ -94,9 +95,8 @@ class Account extends Component {
                 <Switch>
                     <div id='mainWrapper'>
                     <Route exact path='/account'>
-                        <div className='container-fluid'>
+                        <div className='container-fluid account-wrapper'>
                             <div className='identification'>
-                                <h1>Bienvenido,</h1>
                                 <div className='userID'>
                                     <div className='userImg-container'><img alt='userImg' src={this.state.userImg}></img></div>
                                     <h2><b>{this.state.userName}</b></h2>
@@ -110,14 +110,20 @@ class Account extends Component {
                                 </div>
                             </div>
                             <br></br>
-                            <div className='create-container container'>
+                            {/* <div className='create-container container'>
                                 <h2>Crear Evento</h2>
                                 <div className='create'> 
                                     <CreateEvent/>
                                 </div>
-                            </div>
+                            </div> */}
+
+                            {/* Update Youtube link */}
                             <br></br>
-                            <button onClick={this.updateYouTube} className='btn btn-outline-secondary'><img alt='youtube-img' src={youtubeIMG}></img>Update YouTube Link</button>
+                            <div>
+                                <UpdateYouTube YouTubeUpdated = {this.updateYouTube}/>
+                            </div>
+
+                            {/* more button */}
                             <div className='options-container'>
                                 <button onClick={this.showMoreOptions} id='acc-actions' className='acc-actions'><img alt='acc-actions' src={moreOptions}></img></button> 
                                 <button onClick={this.redirectToSignUp} id='add-new-acc' className='add-new-acc'><img alt='add-new-acc' src={addUser}></img></button>

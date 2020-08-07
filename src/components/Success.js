@@ -21,7 +21,7 @@ class Success extends Component {
         var url = window.location.href;
         url = url.substring(url.indexOf('?'));
         
-        axios.get('/success', { params: url }).then((response) => {
+        axios.get('https://cors-anywhere.herokuapp.com/https://ebenezer-final-server.now.sh/success', { params: url }).then((response) => {
             if( response.status === 200 ) {
                 setTimeout(() =>{
                     this.setState({

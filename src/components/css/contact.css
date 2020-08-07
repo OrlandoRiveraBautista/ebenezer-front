@@ -9,14 +9,23 @@
     text-align: center;
 }
 
-.Contact-choises {
+.phone-choices {
     padding: 20px;
+    border-radius: 8px;
+    border-bottom: solid 8px var(--main-color);
 }
 
-.Contact-choises img {
+.phone-choices img {
     display: inline-block;
     height: 100px;
     margin: 25px;
+}
+
+.email-choices {
+    padding: 20px;
+    border-radius: 8px;
+    border-bottom: solid 8px var(--main-color);
+    margin-bottom: 16px;
 }
 
 #email-img {
@@ -24,6 +33,7 @@
     height: 100px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 20px;
 }
 
 /* _? For Desktop ----------------------------------------------- */

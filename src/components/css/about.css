@@ -38,13 +38,25 @@ box-shadow: 0px 3px 8px 1px rgba(0,0,0,0.4);
     font-size: 1.20em !important;
 }
 
+/* ministerios */
+.ministerios-container {
+    position: relative;
+    width: 100vw;
+    left: -15px;
+    padding: 15px;
+}
+
 .person-carousel {
+    position: relative;
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
     height: 280px;
     margin-top: 10px;
     margin-bottom: 20px;
+    width: 100vw;
+    left: -15px;
+    padding-left: 15px;
 }
 /* Person Carousel */
 .person-carousel div{

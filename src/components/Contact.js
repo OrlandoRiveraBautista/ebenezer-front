@@ -24,23 +24,37 @@ class Contact extends Component {
                 <div className='video-container' id='map-container'>
                     <iframe title='googleMaps'  id="gmap_canvas" src="https://maps.google.com/maps?q=1713%20Charles%20Rd%2C%20Houston%2C%20TX%2077093&t=&z=13&ie=UTF8&iwloc=&output=embed" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0"></iframe>
                 </div>
-                <h1>Horario</h1>
-                <p><b>Miercoles - </b>7:30pm</p>
-                <p><b>Viernes - </b>7:30pm</p>
-                <p><b>Domingo (Mañana) - </b>10:00am</p>
-                <p><b>Domingo (Tarde) - </b>5:00pm</p>
-                <br></br>
-                <h1>Contacto</h1>
-                <p><b>Telefono: </b>(281) 844-2909</p>
-                <span>O Presione Uno</span>
-                <div className='Contact-choises'>
-                    <a href='tel:2818442909'><img alt='call-phone' src={greenphone}></img></a>
-                    <a href='sms:2818442909'><img alt='message-phone' src={greenmessage}></img></a>
+                <div className='schedule'>
+                    <h1>Horario</h1>
+                    <ul>
+                        <li><p><b>Miercoles - </b>7:30pm</p></li>
+                        <li><p><b>Viernes - </b>7:30pm</p></li>
+                        <li><p><b>Domingo (Mañana) - </b>10:00am</p></li>
+                        <li><p><b>Domingo (Tarde) - </b>5:00pm</p></li>
+                    </ul>
                 </div>
                 <br></br>
-                <h1>Email</h1>
-                <p><b>Email: </b>pfariasr48@gmail.com</p>
-                <a href='mailto: pfariasr48@gmail.com'><img id='email-img' alt='email' src={greenemail}></img></a>
+                <div className='contact-info'>
+                    <h1>Contacto</h1>
+                    <ul>
+                        <li><p><b>Telefono: </b>(281) 844-2909</p></li>
+                    </ul>
+                    <div className='phone-choices'>
+                        <a href='tel:2818442909'><img alt='call-phone' src={greenphone}></img></a>
+                        <a href='sms:2818442909'><img alt='message-phone' src={greenmessage}></img></a>
+                        <span>Presione Uno</span>
+                    </div>
+                    <br></br>
+                    <div className='email-choices'>
+                        <h1>Email</h1>
+                        <ul>
+                            <li><p><b>Email: </b>pfariasr48@gmail.com</p></li>
+                        </ul>
+                        <div className='email-button'>
+                            <a href='mailto: pfariasr48@gmail.com'><img id='email-img' alt='email' src={greenemail}></img></a>
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     }

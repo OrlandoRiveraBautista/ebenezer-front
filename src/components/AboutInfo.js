@@ -60,66 +60,96 @@ class AboutInfo extends Component {
                                 <Link onClick={this.redirectPastorPage} ><h4><b>Conocer Mas</b></h4></Link>
                         </div>
                         {/* Ministerios */}
-                        <h1>Ministerios</h1>
+                        <div className='ministerios-container'>
 
-                        {/* Ujieres People */}
-                        <div className='about-more-info'>
-                            <h4>Ujieres<span>MAS</span></h4>
-                        </div>
-                        <div className="person-carousel">
-                            <Person picture={ujieres} name='Marcelino Martinez' title='Lider' /> 
-                            <Person picture={ujieres} name='Idolina Martinez' title='Lider' />
-                            <Person name='John Doe' title='Ujier' />
-                        </div>
+                            <h1>Ministerios</h1>
 
-                        {/* Escuela Dominical People */}
-                        <div className='about-more-info'>
-                            <h4>Escuela Dominical <span>MAS</span></h4>
-                        </div>
-                        <div className="person-carousel">
-                            <Person />
-                            <Person />
-                            <Person />
-                        </div>
+                            {/* Ujieres People */}
+                            <div className='ujieres'>
 
-                        {/* Musica People */}
-                        <div className='about-more-info'>
-                            <h4>Musica y Alabanza<span>MAS</span></h4>
-                        </div>
-                        <div className="person-carousel">
-                            <Person />
-                            <Person />
-                            <Person />
-                        </div>
+                                <div className='about-more-info'>
+                                    <h4>Ujieres<span>MAS</span></h4>
+                                </div>
 
-                        {/* Jovenes People */}
-                        <div className='about-more-info'>
-                            <h4>Grupo de Jovenes<span>MAS</span></h4>
-                        </div>
-                        <div className="person-carousel">
-                            <Person />
-                            <Person />
-                            <Person />
-                        </div>
+                                {/* Images of ministros */}
+                                <div className="person-carousel">
+                                    <Person picture={ujieres} name='Marcelino Martinez' title='Lider' /> 
+                                    <Person picture={ujieres} name='Idolina Martinez' title='Lider' />
+                                    <Person name='John Doe' title='Ujier' />
+                                </div>
 
-                        {/* Damas People */}
-                        <div className='about-more-info'>
-                            <h4>Grupo de Damas<span>MAS</span></h4>
-                        </div>
-                        <div className="person-carousel">
-                            <Person />
-                            <Person />
-                            <Person />
-                        </div>
+                            </div>
 
-                        {/* Varones People */}
-                        <div className='about-more-info'>
-                            <h4>Grupo de Varones<span>MAS</span></h4>
-                        </div>
-                        <div className="person-carousel">
-                            <Person />
-                            <Person />
-                            <Person />
+                            {/* Escuela Dominical People */}
+                            <div className='escuela-dominical' >
+
+                                <div className='about-more-info'>
+                                    <h4>Escuela Dominical <span>MAS</span></h4>
+                                </div>
+                                <div className="person-carousel">
+                                    <Person />
+                                    <Person />
+                                    <Person />
+                                </div>
+
+                            </div>
+
+                            {/* Musica People */}
+                            <div className='alabanza'>
+
+                                <div className='about-more-info'>
+                                    <h4>Musica y Alabanza<span>MAS</span></h4>
+                                </div>
+                                <div className="person-carousel">
+                                    <Person />
+                                    <Person />
+                                    <Person />
+                                </div>
+
+                            </div>
+
+                            {/* Jovenes People */}
+                            <div className='jovenes' >
+
+                                <div className='about-more-info'>
+                                    <h4>Grupo de Jovenes<span>MAS</span></h4>
+                                </div>
+                                <div className="person-carousel">
+                                    <Person />
+                                    <Person />
+                                    <Person />
+                                </div>
+
+                            </div>
+
+                            {/* Damas People */}
+                            <div className='damas'>
+
+                                <div className='about-more-info'>
+                                    <h4>Grupo de Damas<span>MAS</span></h4>
+                                </div>
+                                <div className="person-carousel">
+                                    <Person />
+                                    <Person />
+                                    <Person />
+                                </div>
+
+                            </div>
+
+                            {/* Varones People */}
+                            <div className='varones'>
+
+                                <div className='about-more-info'>
+                                    <h4>Grupo de Varones<span>MAS</span></h4>
+                                </div>
+                                <div className="person-carousel">
+                                    <Person />
+                                    <Person />
+                                    <Person />
+                                </div>
+
+                            </div>
+
                         </div>
                     </Route>
 
