@@ -16,10 +16,9 @@ class RecentVideos extends Component {
         const title = [];
         const description = [];
 
-        // https://cors-anywhere.herokuapp.com/https://ebenezer-final-server.now.sh
-        axios.get('https://cors-anywhere.herokuapp.com/https://ebenezer-final-server.now.sh/videos').then(response => {
+        if ( this.props.recentvideos !== null ) {
             // Saving the data
-            const videoData = response.data;
+            const videoData = this.props.recentvideos.data;
 
             videoData.forEach((video) => {
                 // saving the ID
@@ -29,17 +28,42 @@ class RecentVideos extends Component {
                 description.push(video.description);
             });
             this.setState({
-                videoIds: 
+                videoIds:
                     videoId
-                
-                    // videoId
-                    // publishedAt,
-                    // title,
-                    // description
-                
+
+                // videoId
+                // publishedAt,
+                // title,
+                // description
+
             })
             console.log(this.state.videoIds)
-        });
+
+        } else {
+
+            axios.get('https://cors-anywhere.herokuapp.com/https://ebenezer-final-server.now.sh/videos').then(response => {
+                // Saving the data
+                const videoData = response.data;
+    
+                videoData.forEach((video) => {
+                    // saving the ID
+                    videoId.push(video.videoid)
+                    publishedAt.push(video.publishedData);
+                    title.push(video.title);
+                    description.push(video.description);
+                });
+                this.setState({
+                    videoIds: 
+                        videoId
+                    
+                        // videoId
+                        // publishedAt,
+                        // title,
+                        // description
+                    
+                })
+            });
+        }
     }
 
     render() {

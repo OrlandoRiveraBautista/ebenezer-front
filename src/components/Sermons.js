@@ -19,34 +19,18 @@ class Sermons extends Component {
     // Check for when the component has loaded
     componentDidMount = () => {
 
-        // ---------- THIS WAS THE OLD WAY OF DOING IT ----------
-        // Get information from the API
-        // axios.get('/videos').then(response => {
-        //     const videoData = response.data;
-        //     console.log(videoData);
-        //     videoData.forEach( (video) => {
-        //         const currentVidID = video.snippet.resourceId.videoId;
-
-        //         // Set the state of the src to the correct link
-        //         this.setState({
-        //             YTEmbed: 'https://www.youtube.com/embed/' + currentVidID
-        //         });
-        //     })
-        // });
-        
-
         // Geting current video
-        // https://cors-anywhere.herokuapp.com/https://ebenezer-final-server.now.sh
-        axios.get('https://cors-anywhere.herokuapp.com/https://ebenezer-final-server.now.sh/latestvideo').then(response => {
-            // Saving the data
-            const videoData = response.data;
-            
+        if ( this.props.latestvideo !== null ) {
+
+            // Getting data from props
+            const videoData = this.props.latestvideo.data;
+
             // saving the ID
             const currentVidID = videoData.videoid;
             const videoDescription = videoData.description
 
             // Setting the Id to the embeded link
-            if( currentVidID !== undefined ) {
+            if (currentVidID !== undefined) {
                 this.setState({
                     YTEmbed: 'https://www.youtube.com/embed/' + currentVidID,
                     YTDescription: videoDescription
@@ -54,8 +38,28 @@ class Sermons extends Component {
             } else {
                 console.error('Could Not Obtain Video ID');
             }
+
+        } else {
+            axios.get('https://cors-anywhere.herokuapp.com/https://ebenezer-final-server.now.sh/latestvideo').then(response => {
+                // Saving the data
+                const videoData = response.data;
                 
-        });
+                // saving the ID
+                const currentVidID = videoData.videoid;
+                const videoDescription = videoData.description
+    
+                // Setting the Id to the embeded link
+                if( currentVidID !== undefined ) {
+                    this.setState({
+                        YTEmbed: 'https://www.youtube.com/embed/' + currentVidID,
+                        YTDescription: videoDescription
+                    })
+                } else {
+                    console.error('Could Not Obtain Video ID');
+                }
+                    
+            });
+        }
 
         // Check for when the state of the src has changed
         this.componentDidUpdate = (prevProps, prevState) => {
@@ -88,7 +92,7 @@ class Sermons extends Component {
                 </div>
                 <div className='recent-videos'>
                     <h1 className='secondary-text'>Recientes</h1>
-                    <RecentVideos />
+                    <RecentVideos recentvideos = { this.props.recentvideos }/>
                 </div>
             </div>
         );

@@ -23,11 +23,10 @@ class Home extends Component {
     componentDidMount = () => {
 
         const postData = [];
-        // Getting the posts from MongoDB
-        // @ FIX: I TRIED USING ENVOROMENT VARIABLES 
-        axios.get('https://cors-anywhere.herokuapp.com/https://ebenezer-final-server.now.sh/posts').then(response => {
+        
+        if ( this.props.latestposts !== null ) {
             // Getting the response data
-            const posts = response.data;
+            const posts = this.props.latestposts.data;
             // Checking every single post
             posts.forEach((post) => {
                 postData.push(post)
@@ -35,7 +34,20 @@ class Home extends Component {
             this.setState({
                 getPost: postData
             })
-        })
+        } else {
+            axios.get('https://cors-anywhere.herokuapp.com/https://ebenezer-final-server.now.sh/posts').then(response => {
+                // Getting the response data
+                const posts = response.data;
+                // Checking every single post
+                posts.forEach((post) => {
+                    postData.push(post)
+                })
+                this.setState({
+                    getPost: postData
+                })
+            })
+
+        }
 
         // Checking the state
         this.componentDidUpdate = (YTEmbed) => {

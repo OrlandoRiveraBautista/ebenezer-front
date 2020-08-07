@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, NavLink } from "react-router-dom";
 import ProtectedRoute from './models/ProtectedRoute';
+import axios from 'axios';
 
 // importing components
 import Intro from './components/Intro';
@@ -38,13 +39,40 @@ class App extends Component {
     super ( props )
     this.state = {
       firstTime: true, // This will make the welcome only come when you first go to the site
-      A2H: false
+      A2H: false,
+
+      latestposts: null, // This is to keep the post always there
+
+      latestvideo: null, // This is for the latest video
+      recentvideos: null, // This is for recent videos
     }
   }
   
   componentDidMount() {
     console.log(window.innerHeight)
     console.log(document.getElementById('content').style.height)
+
+    // To get the POSTS
+    axios.get('https://cors-anywhere.herokuapp.com/https://ebenezer-final-server.now.sh/posts').then(response => {
+      this.setState({
+        latestposts: response
+      })
+    });
+
+    // To get the data for the LATESTVIDEO only once
+    axios.get('https://cors-anywhere.herokuapp.com/https://ebenezer-final-server.now.sh/latestvideo').then(response => { 
+      this.setState({
+        latestvideo: response
+      })
+    });
+
+    // To get the data for the VIDEOS only once
+    axios.get('https://cors-anywhere.herokuapp.com/https://ebenezer-final-server.now.sh/videos').then(response => {
+      this.setState({
+        recentvideos: response
+      })
+    });
+
   }
   
   render( ) {
@@ -105,7 +133,7 @@ class App extends Component {
 
             {/* Home Route */}
             <Route exact path="/">
-                <Home />
+                <Home latestposts = { this.state.latestposts } />
               {/* <Greetings show = { this.state.firstTime }/> */}
             </Route>
 
@@ -126,7 +154,7 @@ class App extends Component {
 
             {/* Sermons Route */}
             <Route exact path="/sermons">
-              <Sermons />
+              <Sermons latestvideo = { this.state.latestvideo } recentvideos = { this.state.recentvideos } />
             </Route>
 
             {/* Contact Route */}
