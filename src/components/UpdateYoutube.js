@@ -23,16 +23,22 @@ class UpdateYoutube extends Component {
 
 
         // ---------- Function to update the live video ----------- //
-        // axios.get()
-
-        this.setState({
-            redirect: true
-        }, () => {
-            if(this.props.YouTubeUpdated) {
-                console.log(this.state.redirect)
-                this.props.YouTubeUpdated(this.state.redirect)
+        axios.get('https://cors-anywhere.herokuapp.com/https://ebenezer-final-server.now.sh/live').then(response => {
+            if ( response ) {
+                this.setState({
+                    redirect: true
+                }, () => {
+                    if(this.props.YouTubeUpdated) {
+                        console.log(this.state.redirect)
+                        this.props.YouTubeUpdated(this.state.redirect)
+                    }
+                })
+                console.log('Video Updated')
+            } else {
+                console.log('No Live Video' + response)
             }
         })
+
 
     }
 
