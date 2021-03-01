@@ -1,6 +1,15 @@
 /* Importing fonts */
 @import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Mallanna&display=swap');
+@font-face {
+  font-family: SpaceGrotesk ;
+  src: local('SpaceGrotesk'), url(./fonts/space-grotesk/SpaceGrotesk-Regular.ttf) format('truetype');
+} 
+ @font-face {
+  font-family: SpaceGrotesk ;
+  font-weight: 600;
+  src: local('SpaceGrotesk'), url(./fonts/space-grotesk/SpaceGrotesk-Medium.ttf) format('truetype');
+}
 
 
 :root {
@@ -35,20 +44,24 @@ html, body {
 h1 {
   font-size: 2em !important;
   margin-top: 20px !important;
-  font-weight: bold !important;
+  /* font-weight: bold !important; */
+  font-weight: 600 !important;
+  font-family: 'SapceGrotesk', sans-serif !important;
 }
 h2 {
   font-size: 1.75em !important;
+  font-family: 'SapceGrotesk', sans-serif !important;
 }
 h3 {
   font-size: 1.5em !important;
+  font-family: 'SapceGrotesk', sans-serif !important;
 }
 h4 {
   font-size: 1.25em !important;
 }
 p {
-  font-size: 1.15em !important;
-  font-family: 'Mallanna', sans-serif;
+  /* font-size: 1em !important; */
+  /* font-family: 'SapceGrotesk', sans-serif; */
 }
 
 /* The Content div */

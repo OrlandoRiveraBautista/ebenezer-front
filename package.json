@@ -20,7 +20,8 @@
     "react-dom": "^16.13.1",
     "react-router-dom": "5.2.0",
     "react-scripts": "3.4.1",
-    "serve": "^11.3.2"
+    "serve": "^11.3.2",
+    "typeface-spacegrotesk": "0.0.66"
   },
   "scripts": {
     "dev": "react-scripts start",

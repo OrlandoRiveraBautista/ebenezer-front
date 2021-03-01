@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route, Redirect, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 
 // Components
 // import VersePicker from './VersePicker';
@@ -39,6 +39,7 @@ class BookPicker extends Component {
         if(this.state.didPickBook) {
             return <Redirect push to='/bible/chapter'/>
         }
+        
         return (
             <Router>
                 <Switch>

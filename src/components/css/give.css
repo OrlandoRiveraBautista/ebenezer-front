@@ -12,9 +12,9 @@
     padding-top: 8px !important;
     padding-bottom: 8px !important;
 
-    -webkit-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.4);
-    -moz-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.4);
-    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.4);
+    -webkit-box-shadow: 0px 12px 34px -7px var(--give-color);
+    -moz-box-shadow: 0px 12px 34px -7px var(--give-color);
+    box-shadow: 0px 12px 34px -7px var(--give-color);
 
     
     margin-left: auto;

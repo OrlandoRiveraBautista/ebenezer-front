@@ -7,7 +7,7 @@ export default function ProtectedRoute ({ component: Component, ...rest }) {
         <Route 
             {...rest}
             render={ props => getSession() === true 
-                ? <Component { ...props } />
+                ? <Component { ...props } { ...rest} />
                 : <Redirect to='/login' />
             } />
     );

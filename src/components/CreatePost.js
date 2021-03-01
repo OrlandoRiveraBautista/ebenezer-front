@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Redirect } from "react-router-dom";
+import axios from 'axios'
+
+// css
 import './css/home.css';
 import './css/createpost.css';
-
 // image
 import createNew from './graphics/icons/createnew.svg'
 
-// AXIOS
-import axios from 'axios'
+// components
+import Loading from './indicator/Loading';
 
 class CreatePost extends Component {
     constructor(props) {
@@ -17,7 +19,8 @@ class CreatePost extends Component {
             fileName: '',
             title: '',
             body: '',
-            file: null
+            file: null,
+            submitted: false
         }
         
         this.handleChange = this.handleChange.bind(this);
@@ -46,6 +49,12 @@ class CreatePost extends Component {
     }
 
     storeNewPost(event){
+
+        // Letting the UI know the button was pressed
+        this.setState({
+            submitted: true
+        })
+
         const fileData = new FormData();
         fileData.append('file', this.state.file);
         fileData.append('title', this.state.title);
@@ -110,14 +119,14 @@ class CreatePost extends Component {
                                         <label>Foto</label><span><small> *proporción 1/1</small></span>
                                         <div className='custom-file'>
                                             <input type='file' accept='.svg, .png, .jpeg, .jpg' className='custom-file-input' id='file' name='file' multiple onChange={this.handleChange} value={this.state.fileName}></input>
-                                            <label for='file' className='custom-file-label' >{this.state.fileName}</label>
+                                            <label htmlFor='file' className='custom-file-label' >{this.state.fileName}</label>
                                         </div>
                                     </div>
                                 </div>
                                 <br></br>
                                 <div id='success'></div>
                                 <div className='form-group'>
-                                    <button type='submit' className='btn btn-primary' id='sendMessageButton' ><img alt='submit-icon' src={createNew} ></img>Crear</button>
+                                    { this.state.submitted ? <Loading/> : <button type='submit' className='btn btn-primary' id='sendMessageButton' ><img alt='submit-icon' src={createNew} ></img>Crear</button>}
                                 </div>
                             </form>
                         </div>

@@ -21,6 +21,7 @@ import Bible from './components/Bible';
 
 // Styles
 import './App.css';
+import 'typeface-spacegrotesk'
 
 // importing images
 import Logo from './components/graphics/EBZ Logo.png';
@@ -45,12 +46,11 @@ class App extends Component {
 
       latestvideo: null, // This is for the latest video
       recentvideos: null, // This is for recent videos
+      userAssignments: null 
     }
   }
   
   componentDidMount() {
-    console.log(window.innerHeight)
-    console.log(document.getElementById('content').style.height)
 
     // To get the POSTS
     axios.get('https://cors-anywhere.herokuapp.com/https://ebenezer-final-server.now.sh/posts').then(response => {
@@ -72,6 +72,13 @@ class App extends Component {
         recentvideos: response
       })
     });
+
+    // Get Assignments for BasicUser 
+    axios.get("http://localhost:5000/getUserInfo").then(response => {
+      this.setState({
+        userAssignments: response.data.assignments
+      })
+    })
 
   }
   
@@ -188,7 +195,9 @@ class App extends Component {
             <ProtectedRoute exact path='/event/create' component={CreateEvent} />
 
             {/* Account Route */}
-            <ProtectedRoute exact path='/account' component={Account} />
+              <ProtectedRoute exact path='/account' component={Account} userAssignments={this.state.userAssignments}  />
+              <ProtectedRoute exact path='/account/create' component={Account} userAssignments={this.state.userAssignments} />
+              <ProtectedRoute exact path='/account/users' component={Account} userAssignments={this.state.userAssignments} />
 
           </Switch>
         </div>

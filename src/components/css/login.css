@@ -4,3 +4,19 @@
     margin-left: auto !important;
     margin-right: auto !important;
 }
+
+/* #sendMessageButton {
+    animation: dismissBtn 1500ms ease-in-out;
+}
+
+@keyframes dismissBtn {
+    99% {
+        margin: 0;
+        padding: 0;
+        width: 0px;
+        content: '';
+    }
+    100% {
+        display: none;
+    }
+} */

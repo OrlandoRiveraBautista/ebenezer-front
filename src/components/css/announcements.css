@@ -38,6 +38,10 @@
 /* _? For Desktop ----------------------------------------------- */
                 /* Large Bound */
                 @media only screen and (min-width: 1200px) {  
+                    .current-posts {
+                        margin-bottom: 16px;
+                    }
+
                     .ann-container {
                         grid-template-columns: repeat(10, 1fr);
                         grid-gap: 20px;
@@ -45,15 +49,16 @@
                     .ann-image-container {
                         width: 100%;
                         height: 100%;
-                        grid-column: span 1;
+                        grid-column: span 2;
                     }
                     .ann-image-container img {
                         display: block;
                         margin-top: .2rem;
                         border-radius: 5px;
+                        width: 100%;
                     }
                     .ann-info {
-                        grid-column: span 9;
+                        grid-column: span 8;
                     }
                     /* .current-posts p {
                         margin-left: 165px;

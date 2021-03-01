@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Link, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 // import Cookies from 'js-cookies';
 
 class ChapterPicker extends Component {
@@ -25,10 +25,17 @@ class ChapterPicker extends Component {
             }
         })
     }
+    componentDidUpdate = (prevProps, prevState) => {
+        if (prevState.chapterPicked !== this.state.chapterPicked) {
+            
+        }
+
+    }
 
     render() {
+        
         if (this.state.didPickChapter) {
-            return <Redirect push to='/bible/chapter/verse' />
+            return <Redirect push exact to='/bible/chapter/verse' />
             // this.props.history.push('/bible/chapter/verse');
         }
 
@@ -36,7 +43,7 @@ class ChapterPicker extends Component {
         // Cookies.setItem('bookCookie', this.props.bookData);
         
         if ( bookChapters.length !== 0 ) {
-            console.log(bookChapters)
+            // console.log(bookChapters)
 
             let elements = bookChapters.map((element) => {
                 return (

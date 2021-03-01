@@ -11,7 +11,8 @@ class SignUp extends Component {
             email: null,
             password: null,
             fullName: null,
-            file: null
+            file: null,
+            role: null
         }
     }
 
@@ -20,18 +21,16 @@ class SignUp extends Component {
         const value = target.value;
         const name = target.name;
 
-        if (name === 'email' || name === 'password' || name === 'fullName') {
+        if (name === 'email' || name === 'password' || name === 'fullName' || name === 'role') {
             this.setState({
                 [name]: value
             })
-            console.log(this.state)
         } else {
             const file = target.files[0]
             this.setState({
                 [name]: file,
                 fileName: value
             })
-            console.log(this.state)
         }
     }
 
@@ -41,6 +40,7 @@ class SignUp extends Component {
         fileData.append('email', this.state.email);
         fileData.append('password', this.state.password);
         fileData.append('fullName', this.state.fullName);
+        fileData.append('role', this.state.role);
 
         // Saving the data
         axios.post('https://cors-anywhere.herokuapp.com/https://ebenezer-final-server.now.sh/signup',
@@ -92,6 +92,17 @@ class SignUp extends Component {
                                 <input autoComplete='on' type='file' accept='.svg, .png, .jpeg, .jpg' className='custom-file-input' id='file' name='file' multiple onChange={this.handleChange} value={this.state.fileName}></input>
                                 <label for='file' className='custom-file-label' >{this.state.fileName}</label>
                             </div>
+                        </div>
+                    </div>
+                    <div className='control-group form-row align-items-center'>
+                        <div className=' floating-label-form-group controls col-md-3 my-1'>
+                            <label>Tipo de Usuario</label>
+                            <select className='custom-select mr-sm-2' id='type-of-give' name='role' onChange={this.handleChange} >
+                                <option defaultValue>Escoje...</option>
+                                <option value='admin'>Admin</option>
+                                <option value='preacher'>Predicador</option>
+                                <option value='basic'>Basico</option>
+                            </select>
                         </div>
                     </div>
                     <br></br>

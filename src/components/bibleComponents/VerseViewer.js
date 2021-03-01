@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import Loading from '../indicator/Loading'
+
 
 class VerseViewer extends Component {
     constructor(props) {
@@ -13,8 +15,16 @@ class VerseViewer extends Component {
         // this.componentDidMount = this.componentDidMount.bind(this)
     }
 
+    componentDidMount() {
+        this.setState({
+            nextVerse: this.props.verseData,
+            startVerse: this.props.verseData
+        })
+
+    }
+
     // To check when data update
-    componentDidUpdate(prevProps, prevState) {
+    componentDidUpdate = (prevProps, prevState) => {
         
         // Once the props have been updated by parent component assign data to state
         if( prevProps.verseData !== this.props.verseData ) {
@@ -31,8 +41,8 @@ class VerseViewer extends Component {
             var joinedVerses
 
             // Base Chapter Limit
-            const limitChapter = this.state.startVerse.substr( 0, this.state.startVerse.indexOf('.') + 2 )
-            var chapter = this.state.nextVerse.substr( 0, this.state.startVerse.indexOf('.') +2 )
+            const limitChapter = `${this.state.startVerse}`.substr( 0, this.state.startVerse.indexOf('.') + 2 )
+            var chapter = `${this.state.nextVerse}`.substr( 0, this.state.startVerse.indexOf('.') +2 )
 
             // If statement to terminate GET after all chapter's verses have been retrieved
             if( chapter === limitChapter ) {
@@ -45,7 +55,6 @@ class VerseViewer extends Component {
 
                     // Concating data together
                     joinedVerses = this.state.verses.concat(verseData)
-                    console.log(joinedVerses)
                     
                     // Getting the next chapter id
                     nextVerse = response.data.data.next.id
@@ -85,7 +94,7 @@ class VerseViewer extends Component {
         } else {
             return (
                 <div>
-                    <h3>Loading...</h3>
+                    <Loading/>
                 </div>
             )
         }

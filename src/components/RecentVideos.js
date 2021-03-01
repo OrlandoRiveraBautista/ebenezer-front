@@ -28,14 +28,7 @@ class RecentVideos extends Component {
                 description.push(video.description);
             });
             this.setState({
-                videoIds:
-                    videoId
-
-                // videoId
-                // publishedAt,
-                // title,
-                // description
-
+                videoIds: videoId
             })
             console.log(this.state.videoIds)
 
@@ -53,14 +46,7 @@ class RecentVideos extends Component {
                     description.push(video.description);
                 });
                 this.setState({
-                    videoIds: 
-                        videoId
-                    
-                        // videoId
-                        // publishedAt,
-                        // title,
-                        // description
-                    
+                    videoIds: videoId
                 })
             });
         }
@@ -71,6 +57,7 @@ class RecentVideos extends Component {
         if (this.state.videoIds !== '') {
 
             let elements = this.state.videoIds.map((element) => {
+                
                 return (<div className='previous-video'>
                     <div className='video'> 
                         <div className='video-iframe'>
@@ -85,6 +72,7 @@ class RecentVideos extends Component {
                         </div>
                     </div>
                 </div>)
+
             })
 
             return (

@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios'
 import Cookies from 'js-cookies';
-import jwt_decode from 'jwt-decode';
+// import jwt_decode from 'jwt-decode';
+
+// Extra Components
+import Loading from './indicator/Loading'
 
 // CSS
 import './css/login.css'
@@ -16,7 +19,8 @@ class LogIn extends Component {
         this.state = {
             email: null,
             password: null,
-            redirect: false
+            redirect: false,
+            submitted: false
         }
     }
 
@@ -33,6 +37,11 @@ class LogIn extends Component {
 
     loginUser = async (event) => {
 
+        // Letting the UI know the button was pressed
+        this.setState({
+            submitted: true
+        })
+
         // Saving the data
         // @FIX For some reason when using the production API the token cannot be read through the Cookies.get() function 
         axios.post('https://cors-anywhere.herokuapp.com/https://ebenezer-final-server.now.sh/login',
@@ -42,11 +51,10 @@ class LogIn extends Component {
                     console.log('Upload Progress: ' + (progressEvent.loaded / progressEvent.total * 100) + '%')
                 }
             }).then( async (response) => {
-                console.log(response.data.token)
+    
                 if (response.statusText === 'OK') {
                     await Cookies.setItem('token', response.data.token)
                     const jwt =  Cookies.getItem('token');
-                    console.log(jwt)
 
                     if( jwt ) {
                         this.setState({
@@ -84,9 +92,8 @@ class LogIn extends Component {
                         </div>
                     </div>
                     <br></br>
-                    <div id='success'></div>
                     <div className='form-group'>
-                        <button type='submit' className='btn btn-primary' id='sendMessageButton' ><img alt='submit-icon' src={confirmUser} ></img>Iniciar</button>
+                        {this.state.submitted ? <Loading /> : <button type='submit' className='btn btn-primary' id='sendMessageButton' ><img alt='submit-icon' src={confirmUser} ></img>Iniciar</button>}
                     </div>
                 </form>
             </div>

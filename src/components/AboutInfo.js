@@ -43,7 +43,7 @@ class AboutInfo extends Component {
                         
                         <div className='about-church-container'>
                         <div className='church-img-container'>
-                            <img></img>
+                            <img alt='' ></img>
                         </div>
                         <div className='church-des-container'>
                             <p><b>Somos</b> una iglesia cristiana misionera de sana doctrina. Nuestro propósito es predicar la palabra de Dios para salvación a toda la humanidad. Creemos firmemente en guardar los principios bíblicos establecidos por Dios que afectan nuestros patrones de vida. Aquí es un lugar donde usted puede ser transformado por la palabra y el poder de Dios.</p>

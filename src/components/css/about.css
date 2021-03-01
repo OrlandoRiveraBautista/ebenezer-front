@@ -3,6 +3,9 @@
 }
 
 /* Pastores */
+.pastors-container {
+    position: relative;
+}
 .pastors-container img {
     position: relative;
     display: block;
@@ -102,5 +105,37 @@ box-shadow: 0px 3px 8px 1px rgba(0,0,0,0.4);
                     .church-des-container p {
                         letter-spacing: .02rem;
                         font-size: 1.25em !important;
+                    }
+
+                    .pastors-container img {
+                        margin-left: 16px;
+                        margin-right: 20px;
+                        width: 250px;
+                        display: inline-block;
+                    }
+                    .pastors-container h3 {
+                        position: absolute;
+                        display: inline-block;
+                        padding: 12px;
+                        top: 0;
+                    }
+                    .pastors-container p {
+                        position: absolute;
+                        display: inline-block;
+                        top: 44px;
+                        padding: 12px;
+                        padding-left: 20px;
+                    }
+                    .pastors-container a {
+                        display: inline-block;
+                        float: right;
+                    }
+
+                    /* People */
+                    .person-carousel {
+                        width: 100%;
+                    }
+                    .ministerios-container {
+                        width: 100%;
                     }
                 }

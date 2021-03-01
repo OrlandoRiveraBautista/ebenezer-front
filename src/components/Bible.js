@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route, } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import axios from 'axios';
 // import Cookies from 'js-cookies';
 
@@ -89,8 +89,11 @@ class Bible extends Component {
             axios.get ( `https://api.scripture.api.bible/v1/bibles/592420522e16049f-01/chapters/${this.state.currentChapter}/verses`, { headers: { 'api-key': '7dbe0c4776c211bd9f6bdfe5b3f6694a' } } ).then ( response => {
                 // Getting the verses
                 const versedatas = response.data.data;
+                versedatas.forEach((versedatas) => {
+                    verses.push(versedatas)
+                })
                 this.setState ({
-                    currentVerse: versedatas[0]
+                    currentVerse: verses[0]
                 })
             })  
         } 
@@ -100,7 +103,7 @@ class Bible extends Component {
 
             const pickedVerse = this.state.currentVerse.id;
 
-            // axios.get(`https://api.scripture.api.bible/v1/bibles/592420522e16049f-01/verses/${pickedVerse}?content-type=text&include-notes=false&include-titles=true&include-chapter-numbers=false&include-verse-numbers=true&include-verse-spans=false&use-org-id=false`, { headers: { 'api-key': '7dbe0c4776c211bd9f6bdfe5b3f6694a' } } ).then( response => {
+            axios.get(`https://api.scripture.api.bible/v1/bibles/592420522e16049f-01/verses/${pickedVerse}?content-type=text&include-notes=false&include-titles=true&include-chapter-numbers=false&include-verse-numbers=true&include-verse-spans=false&use-org-id=false`, { headers: { 'api-key': '7dbe0c4776c211bd9f6bdfe5b3f6694a' } } ).then( response => {
 
                 // getting the content 
                 this.setState({
@@ -108,7 +111,7 @@ class Bible extends Component {
                     verseRedirect: true
                 })
                 // console.log(response)
-            // })
+            })
             // this.context.history.push('/bible/chapter/verse')
         }
 
@@ -118,10 +121,6 @@ class Bible extends Component {
     // Do the same when the user picks a chapter
 
     render() {
-
-        // if (this.state.verseRedirect) {
-        //     return <Redirect push to='/bible/chapter/verse' />
-        // }
 
         // What will be returned in render
         return (
