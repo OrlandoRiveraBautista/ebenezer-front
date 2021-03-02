@@ -56,7 +56,7 @@ class App extends Component {
 
   componentDidMount() {
     // To get the POSTS
-    axios.get("https://ebenezer-final-server.now.sh/posts").then((response) => {
+    axios.get("http://localhost:3000/posts").then((response) => {
       this.setState({
         latestposts: response,
       });
