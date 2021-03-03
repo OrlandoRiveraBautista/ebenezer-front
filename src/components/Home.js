@@ -33,17 +33,19 @@ class Home extends Component {
         getPost: postData,
       });
     } else {
-      axios.get("http://localhost:3000/posts").then((response) => {
-        // Getting the response data
-        const posts = response.data;
-        // Checking every single post
-        posts.forEach((post) => {
-          postData.push(post);
+      axios
+        .get("https://ebenezer-final-server.now.sh/posts")
+        .then((response) => {
+          // Getting the response data
+          const posts = response.data;
+          // Checking every single post
+          posts.forEach((post) => {
+            postData.push(post);
+          });
+          this.setState({
+            getPost: postData,
+          });
         });
-        this.setState({
-          getPost: postData,
-        });
-      });
     }
 
     // Checking the state

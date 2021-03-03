@@ -56,7 +56,7 @@ class App extends Component {
 
   componentDidMount() {
     // To get the POSTS
-    axios.get("http://localhost:3000/posts").then((response) => {
+    axios.get("https://ebenezer-final-server.now.sh/posts").then((response) => {
       this.setState({
         latestposts: response,
       });
@@ -81,11 +81,13 @@ class App extends Component {
       });
 
     // Get Assignments for BasicUser
-    axios.get("http://localhost:5000/getUserInfo").then((response) => {
-      this.setState({
-        userAssignments: response.data.assignments,
+    axios
+      .get("https://ebenezer-final-server.now.sh/getUserInfo")
+      .then((response) => {
+        this.setState({
+          userAssignments: response.data.assignments,
+        });
       });
-    });
   }
 
   render() {
